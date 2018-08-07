@@ -237,13 +237,15 @@ class SL015M:
 	def displayInfo(self):
 		desc = """\n
 **** RFID Application V 1.0 ****
+********************************
 't' for read tag information
 'r' for read data
 'w' for write block
 'a' for write AFI
 'd' for write DSFID
 'x' for reset
-press character : """
+********************************
+Please select a character : """
 
 		sys.stdout.write(desc)
 		sys.stdout.flush()
@@ -265,6 +267,9 @@ press character : """
 							k_in = self.kb.getch()
 							
 							if (chars.find(k_in) >= 0):
+								print "" + k_in
+								print "********************************"
+								print ">>> Data from card >>>"
 								if (k_in == "t"):
 									self.readTaginfo()
 		
@@ -305,11 +310,12 @@ press character : """
 									self.writeDSFID(0)
 									self.ledOff()
 									
+								print "<<< End data <<<"
 								print ""
 								self.displayInfo()
 			
 							else:
-								sys.stdout.write("\npress character : ")
+								sys.stdout.write("\nPlease select a character : ")
 								sys.stdout.flush()
 					except IOError:
 						pass
