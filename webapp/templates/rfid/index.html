@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}ข้อมูล RFID{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form>
+	<div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">ลำดับต้น</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" id="trunk" placeholder="ลำดับต้น"
+      	ng-disabled="isDataPresent()" ng-model="trunk">
+    </div>
+  </div>
+	<div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">ลำดับกิ่ง</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" id="branch" placeholder="ลำดับกิ่ง"
+       ng-disabled="isDataPresent()"  ng-model="branch">
+    </div>
+  </div>
+	<div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">วัน</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" id="branch" placeholder="วัน" 
+       ng-disabled="isDataPresent()"  ng-model="day">
+    </div>
+  </div>
+	<div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">เดือน</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" id="branch" placeholder="เดือน" 
+       ng-disabled="isDataPresent()" ng-model="month">
+    </div>
+  </div>
+	<div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">[yy??]ปี (พ.ศ.)</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" id="branch" placeholder="ปี" 
+       ng-disabled="isDataPresent()"  ng-model="year1">
+    </div>
+  </div>
+	<div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">[??yy]ปี (พ.ศ.)</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" id="branch" placeholder="ปี" 
+       ng-disabled="isDataPresent()"  ng-model="year2">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="isDataPresent()" ng-click="saveClicked()">บันทึก</button>
+</form>
+{% endblock %}

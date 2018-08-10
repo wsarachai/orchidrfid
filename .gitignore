@@ -1,2 +1,15 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
+venv/
+
 *.pyc
+__pycache__/
+
+instance/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+dist/
+build/
+*.egg-info/
