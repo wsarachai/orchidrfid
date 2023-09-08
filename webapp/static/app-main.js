@@ -62,7 +62,7 @@ angular.module('OrchidRFIDApp', [])
 		}, function (error) {
 			
 		});
-    $timeout(timer, 1000);
+    $timeout(timer, 500);
   }
   
   $timeout(timer, 1000);  
